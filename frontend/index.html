@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Smart To-Do</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- 🔐 AUTH CHECK -->
+  <script>
+    const user = localStorage.getItem("user");
+    if (!user) {
+      window.location.href = "auth.html";
+    }
+  </script>
+
+  <!-- HEADER -->
+  <div class="header">
+    <h1>🌿 Smart To-Do</h1>
+    <p class="subtitle">Plan tasks based on your mood</p>
+    <button onclick="logout()" class="logout-btn">Logout</button>
+  </div>
+
+  <!-- MOOD SELECTOR -->
+  <div class="mood-container">
+    <button onclick="setMood('Happy')">😊 Happy</button>
+    <button onclick="setMood('Stressed')">😣 Stressed</button>
+    <button onclick="setMood('Tired')">😴 Tired</button>
+  </div>
+
+  <p id="moodText"></p>
+
+  <!-- ADD TASK -->
+  <div class="form">
+    <input type="text" id="title" placeholder="Enter task">
+
+    <select id="priority">
+      <option>Low</option>
+      <option>Medium</option>
+      <option>High</option>
+    </select>
+
+    <select id="mood">
+      <option>Happy</option>
+      <option>Stressed</option>
+      <option>Tired</option>
+    </select>
+
+    <button onclick="addTask()">+ Add Task</button>
+  </div>
+
+  <!-- ACTION BUTTONS -->
+  <div class="actions">
+    <button onclick="getTasks()">Show All</button>
+    <button onclick="smartSuggest()">🎯 Smart Suggest</button>
+  </div>
+
+  <!-- TASK LIST -->
+  <div id="taskList"></div>
+
+  <script src="script.js"></script>
+
+</body>
+</html>

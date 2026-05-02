@@ -1,0 +1,56 @@
+body {
+  font-family: Arial;
+  text-align: center;
+  background: #f5f7fb;
+}
+
+h1 {
+  color: #5a67d8;
+}
+
+.subtitle {
+  color: gray;
+}
+
+.mood-container button {
+  margin: 5px;
+  padding: 10px 15px;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+}
+
+.form {
+  margin: 20px;
+}
+
+input, select {
+  padding: 10px;
+  margin: 5px;
+}
+
+button {
+  padding: 10px;
+  cursor: pointer;
+}
+
+#taskList {
+  margin-top: 20px;
+}
+
+.task {
+  background: white;
+  margin: 10px auto;
+  padding: 15px;
+  width: 300px;
+  border-radius: 10px;
+}
+
+.low { border-left: 5px solid green; }
+.medium { border-left: 5px solid orange; }
+.high { border-left: 5px solid red; }
+
+.completed {
+  text-decoration: line-through;
+  opacity: 0.6;
+}
