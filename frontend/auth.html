@@ -7,24 +7,31 @@
 </head>
 <body>
 
+<!-- ✅ Auto redirect if already logged in -->
+<script>
+  const user = localStorage.getItem("user");
+  if (user) {
+    window.location.href = "index.html";
+  }
+</script>
+
 <div class="container">
   <div class="card">
     <h2>🌿 Smart To-Do</h2>
 
-    <!-- Toggle Buttons -->
     <div class="toggle">
       <button onclick="showLogin()">Login</button>
       <button onclick="showSignup()">Signup</button>
     </div>
 
-    <!-- Login Form -->
+    <!-- Login -->
     <div id="loginBox">
       <input id="loginUser" placeholder="Username">
       <input id="loginPass" type="password" placeholder="Password">
       <button onclick="login()">Login</button>
     </div>
 
-    <!-- Signup Form -->
+    <!-- Signup -->
     <div id="signupBox" style="display:none;">
       <input id="signupUser" placeholder="Username">
       <input id="signupPass" type="password" placeholder="Password">

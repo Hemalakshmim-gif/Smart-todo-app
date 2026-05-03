@@ -7,29 +7,31 @@
 </head>
 <body>
 
+<!-- 🔐 Protect page -->
+<script>
+  const user = localStorage.getItem("user");
+  if (!user) {
+    window.location.href = "auth.html";
+  }
+</script>
+
 <div class="app">
 
-  <!-- HEADER -->
   <div class="header">
-    <div>
-      <h1>🌿 Smart To-Do</h1>
-      <p>Plan tasks based on your mood</p>
-    </div>
-    <button class="logout" onclick="logout()">Logout</button>
+    <h1>🌿 Smart To-Do</h1>
+    <button onclick="logout()">Logout</button>
   </div>
 
-  <!-- MOOD SELECTOR -->
   <div class="moods">
     <button onclick="setMood('Happy')">😊</button>
     <button onclick="setMood('Stressed')">😣</button>
     <button onclick="setMood('Tired')">😴</button>
   </div>
 
-  <p id="moodText" class="moodText"></p>
+  <p id="moodText"></p>
 
-  <!-- ADD TASK -->
   <div class="task-form">
-    <input type="text" id="title" placeholder="Enter your task...">
+    <input id="title" placeholder="Enter task">
 
     <select id="priority">
       <option>Low</option>
@@ -46,14 +48,12 @@
     <button onclick="addTask()">+ Add</button>
   </div>
 
-  <!-- ACTIONS -->
   <div class="actions">
-    <button onclick="getTasks()">All Tasks</button>
-    <button class="smart" onclick="smartSuggest()">🎯 Smart Suggest</button>
+    <button onclick="getTasks()">All</button>
+    <button onclick="smartSuggest()">Smart</button>
   </div>
 
-  <!-- TASK LIST -->
-  <div id="taskList" class="task-list"></div>
+  <div id="taskList"></div>
 
 </div>
 

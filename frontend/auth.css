@@ -8,23 +8,12 @@ body {
   align-items: center;
 }
 
-.container {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-}
-
 .card {
   background: white;
   padding: 30px;
   border-radius: 15px;
   width: 300px;
   text-align: center;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-}
-
-h2 {
-  margin-bottom: 20px;
 }
 
 input {
@@ -44,10 +33,6 @@ button {
   background: #667eea;
   color: white;
   cursor: pointer;
-}
-
-button:hover {
-  background: #5a67d8;
 }
 
 .toggle {

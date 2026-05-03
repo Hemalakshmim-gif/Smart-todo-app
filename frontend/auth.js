@@ -1,6 +1,6 @@
-const API = "https://smart-todo-backend-euwc.onrender.com/api/tasks";
+const API = "https://smart-todo-backend-euwc.onrender.com/api/auth";
 
-// Toggle views
+// Toggle
 function showLogin() {
   document.getElementById("loginBox").style.display = "block";
   document.getElementById("signupBox").style.display = "none";
