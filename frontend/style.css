@@ -1,54 +1,125 @@
 body {
-  font-family: Arial;
-  text-align: center;
-  background: #f5f7fb;
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #667eea, #764ba2);
 }
 
-h1 {
-  color: #5a67d8;
+.app {
+  max-width: 600px;
+  margin: auto;
+  padding: 20px;
+  color: white;
 }
 
-.subtitle {
-  color: gray;
+/* HEADER */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.mood-container button {
-  margin: 5px;
-  padding: 10px 15px;
-  border-radius: 20px;
+.logout {
+  background: #ff6b6b;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+}
+
+/* MOODS */
+.moods {
+  display: flex;
+  justify-content: space-around;
+  margin: 20px 0;
+}
+
+.moods button {
+  font-size: 22px;
+  padding: 10px;
+  border-radius: 50%;
   border: none;
   cursor: pointer;
 }
 
-.form {
-  margin: 20px;
+.moodText {
+  text-align: center;
+  margin-bottom: 15px;
 }
 
-input, select {
-  padding: 10px;
-  margin: 5px;
+/* FORM */
+.task-form {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
 }
 
-button {
+.task-form input, .task-form select {
   padding: 10px;
+  border-radius: 8px;
+  border: none;
+}
+
+.task-form button {
+  background: #48bb78;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 8px;
   cursor: pointer;
 }
 
-#taskList {
-  margin-top: 20px;
+/* ACTIONS */
+.actions {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.actions button {
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.smart {
+  background: #f6ad55;
+  color: white;
+}
+
+/* TASK CARDS */
+.task-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
 }
 
 .task {
   background: white;
-  margin: 10px auto;
+  color: black;
   padding: 15px;
-  width: 300px;
-  border-radius: 10px;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
 
-.low { border-left: 5px solid green; }
-.medium { border-left: 5px solid orange; }
-.high { border-left: 5px solid red; }
+.task h3 {
+  margin: 0;
+}
+
+.task button {
+  margin-top: 10px;
+  margin-right: 5px;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* PRIORITY COLORS */
+.low { border-left: 6px solid green; }
+.medium { border-left: 6px solid orange; }
+.high { border-left: 6px solid red; }
 
 .completed {
   text-decoration: line-through;

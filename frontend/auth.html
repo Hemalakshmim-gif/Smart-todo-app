@@ -1,57 +1,39 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Login / Signup</title>
+  <meta charset="UTF-8">
+  <title>Smart To-Do Auth</title>
+  <link rel="stylesheet" href="auth.css">
 </head>
 <body>
 
-<h2>Signup</h2>
-<input id="signupUser" placeholder="Username">
-<input id="signupPass" type="password" placeholder="Password">
-<button onclick="signup()">Signup</button>
+<div class="container">
+  <div class="card">
+    <h2>🌿 Smart To-Do</h2>
 
-<h2>Login</h2>
-<input id="loginUser" placeholder="Username">
-<input id="loginPass" type="password" placeholder="Password">
-<button onclick="login()">Login</button>
+    <!-- Toggle Buttons -->
+    <div class="toggle">
+      <button onclick="showLogin()">Login</button>
+      <button onclick="showSignup()">Signup</button>
+    </div>
 
-<script>
-const API = "http://localhost:5000/api/auth";
+    <!-- Login Form -->
+    <div id="loginBox">
+      <input id="loginUser" placeholder="Username">
+      <input id="loginPass" type="password" placeholder="Password">
+      <button onclick="login()">Login</button>
+    </div>
 
-async function signup() {
-  const username = document.getElementById("signupUser").value;
-  const password = document.getElementById("signupPass").value;
+    <!-- Signup Form -->
+    <div id="signupBox" style="display:none;">
+      <input id="signupUser" placeholder="Username">
+      <input id="signupPass" type="password" placeholder="Password">
+      <button onclick="signup()">Signup</button>
+    </div>
 
-  const res = await fetch(`${API}/signup`, {
-    method: "POST",
-    headers: {"Content-Type": "application/json"},
-    body: JSON.stringify({ username, password })
-  });
+  </div>
+</div>
 
-  const data = await res.json();
-  alert(data.message);
-}
-
-async function login() {
-  const username = document.getElementById("loginUser").value;
-  const password = document.getElementById("loginPass").value;
-
-  const res = await fetch(`${API}/login`, {
-    method: "POST",
-    headers: {"Content-Type": "application/json"},
-    body: JSON.stringify({ username, password })
-  });
-
-  const data = await res.json();
-
-  if (res.status === 200) {
-    localStorage.setItem("user", JSON.stringify(data.user));
-    window.location.href = "index.html";
-  } else {
-    alert(data.message);
-  }
-}
-</script>
-
+<script src="auth.js"></script>
 </body>
 </html>

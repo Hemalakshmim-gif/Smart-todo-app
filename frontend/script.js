@@ -106,13 +106,13 @@ function displayTasks(tasks) {
     }`;
 
     div.innerHTML = `
-      <h3>${task.title}</h3>
-      <p>Priority: ${task.priority}</p>
-      <p>Mood: ${task.mood}</p>
+  <h3>${task.title}</h3>
+  <p>Priority: ${task.priority}</p>
+  <p>Mood: ${task.mood}</p>
 
-      <button onclick="toggleTask('${task.id}')">✔</button>
-      <button onclick="deleteTask('${task.id}')">🗑</button>
-    `;
+  <button style="background:#48bb78;color:white;" onclick="toggleTask('${task.id}')">✔</button>
+  <button style="background:#f56565;color:white;" onclick="deleteTask('${task.id}')">🗑</button>
+`;
 
     list.appendChild(div);
   });
