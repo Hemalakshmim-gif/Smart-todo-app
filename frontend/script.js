@@ -1,4 +1,4 @@
-const API = "http://localhost:5000/api/tasks";
+const API = "https://smart-todo-backend-euwc.onrender.com/api/tasks";
 
 let currentMood = "";
 
